@@ -21,7 +21,7 @@ import com.propswip.models.UserProperty;
 import com.propswip.services.PropswipService;
 
 @RestController
-@RequestMapping("/v1/")
+@RequestMapping("/v1")
 public class ApiResource {
 
 	@Autowired
