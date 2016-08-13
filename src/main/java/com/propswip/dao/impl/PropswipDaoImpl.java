@@ -61,18 +61,24 @@ public class PropswipDaoImpl extends NamedParameterJdbcDaoSupport implements Pro
 
 	private void setRoomsFilter(StringBuilder query,
 			Filter filter) {
-		if(filter.getBedrooms() > 0){
-			if (filter.getBedrooms() == 5) {
+		
+		if(!"0".equalsIgnoreCase(filter.getBedrooms())){
+						
+			if (filter.getBedrooms().contains("5")) {
 				query.append(" and pd.BEDROOMS > 4 ");
 			} else {
-				query.append(" and pd.BEDROOMS = " + filter.getBedrooms());				
+				query.append(" and pd.BEDROOMS IN (");	
+				query.append(filter.getBedrooms() + ") ");
 			}
 		}
-		if(filter.getBathrooms() > 0){
-			if (filter.getBathrooms() == 5) {
+		
+		if(!"0".equalsIgnoreCase(filter.getBathrooms())){
+			
+			if (filter.getBathrooms().contains("5")) {
 				query.append(" and pd.BATHROOMS > 4 ");
 			} else {
-				query.append(" and pd.BATHROOMS = " + filter.getBathrooms());				
+				query.append(" and pd.BATHROOMS IN (");	
+				query.append(filter.getBathrooms() + ") ");
 			}
 		}
 	}

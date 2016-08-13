@@ -8,9 +8,21 @@ public class Filter {
 	private Integer costMax;
 	private Integer areaMin;
 	private Integer areaMax;
-	private Integer bedrooms;
-	private Integer bathrooms;
+	private String bedrooms;
+	private String bathrooms;
 	
+	public String getBedrooms() {
+		return bedrooms;
+	}
+	public void setBedrooms(String bedrooms) {
+		this.bedrooms = bedrooms;
+	}
+	public String getBathrooms() {
+		return bathrooms;
+	}
+	public void setBathrooms(String bathrooms) {
+		this.bathrooms = bathrooms;
+	}
 	public Integer getBuy() {
 		return buy;
 	}
@@ -46,17 +58,5 @@ public class Filter {
 	}
 	public void setAreaMax(Integer areaMax) {
 		this.areaMax = areaMax;
-	}
-	public Integer getBedrooms() {
-		return bedrooms;
-	}
-	public void setBedrooms(Integer bedrooms) {
-		this.bedrooms = bedrooms;
-	}
-	public Integer getBathrooms() {
-		return bathrooms;
-	}
-	public void setBathrooms(Integer bathrooms) {
-		this.bathrooms = bathrooms;
 	}
 }
